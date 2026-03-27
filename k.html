@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clica amor</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        max-width: 350px;
+    }
+
+    h1 {
+        color: #ff4d6d;
+    }
+
+    .item {
+        display: none;
+        font-size: 18px;
+        margin-top: 20px;
+        animation: fade 0.8s ease;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 20px;
+        display: none;
+        animation: fade 1s ease;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        background: #ff4d6d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #e63956;
+    }
+
+    @keyframes fade {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Coisas que amo muito em voce</h1>
+    <p id="texto">Clica para começar </p>
+
+    <div class="item" id="item1">1. Seu risada maravilhosa</div>
+    <div class="item" id="item2">2. Como você é tão linda e seus cabelos</div>
+    <div class="item" id="item3">3. Seu jeito de andar</div>
+    <div class="item" id="item4">4. Sua voz</div>
+    <div class="item" id="item5">5. As danças que você faz do nada</div>
+
+    <img id="foto" src="minha-namorada.jpg" alt="Minha princesa ❤️">
+
+    <button onclick="proximo()" id="botao">Começar 👄 </button>
+</div>
+
+<script>
+let etapa = 0;
+
+function proximo() {
+    etapa++;
+
+    if (etapa === 1) {
+        document.getElementById("texto").style.display = "none";
+        document.getElementById("item1").style.display = "block";
+        document.getElementById("botao").innerText = "Próximo";
+    }
+    else if (etapa === 2) {
+        document.getElementById("item1").style.display = "none";
+        document.getElementById("item2").style.display = "block";
+    }
+    else if (etapa === 3) {
+        document.getElementById("item2").style.display = "none";
+        document.getElementById("item3").style.display = "block";
+    }
+    else if (etapa === 4) {
+        document.getElementById("item3").style.display = "none";
+        document.getElementById("item4").style.display = "block";
+    }
+    else if (etapa === 5) {
+        document.getElementById("item4").style.display = "none";
+        document.getElementById("item5").style.display = "block";
+    }
+    else if (etapa === 6) {
+        document.getElementById("item5").style.display = "none";
+        document.getElementById("foto").style.display = "block";
+        document.getElementById("botao").innerText = "the amor anor 🤍";
+    }
+}
+</script>
+
+</body>
+</html>
